@@ -1,6 +1,5 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
-import {Geolocation, Geoposition} from "@ionic-native/geolocation";
-import {Platform} from "ionic-angular";
+import {Geolocation} from "@ionic-native/geolocation";
 import {
   CameraPosition,
   GoogleMap,
@@ -20,10 +19,12 @@ import {MapStyle} from '../../app/mapStyle';
 export class HomePage {
 
   @ViewChild('map') mapElement: ElementRef;
-  map: GoogleMap
+  map: GoogleMap;
+  address;
 
   constructor(public geolocation: Geolocation,
               public googleMaps: GoogleMaps) {
+
   }
 
   ngAfterViewInit() {
